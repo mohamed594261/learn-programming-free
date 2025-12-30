@@ -37,6 +37,7 @@
             display: inline-block;
             margin: 15px 0;
             font-weight: bold;
+            cursor: pointer;
         }
         .cta:hover {
             background: #0d62d9;
@@ -59,11 +60,29 @@
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        .path-card a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .path-card a:hover {
+            text-decoration: underline;
+        }
         footer {
             text-align: center;
             margin-top: 30px;
             color: #7f8c8d;
             font-size: 0.9em;
+        }
+        .message {
+            background: #e8f5e9;
+            border: 1px solid #c8e6c9;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            display: none;
         }
     </style>
 </head>
@@ -74,8 +93,10 @@
         <h2>تعلم البرمجة مجاناً تماماً</h2>
         <p>مشروع عربي مفتوح المصدر يهدف إلى تعليم البرمجة للجميع من الصفر إلى الاحتراف، بدروس واضحة، أمثلة عملية، ومشاريع حقيقية.</p>
         
-        <a href="#courses" class="cta">ابدأ التعلم الآن 🌒</a>
+        <a href="#start" class="cta" id="start-learning">ابدأ التعلم الآن 🌒</a>
         <a href="#source-code" class="cta">شاهد الكود المصدر 🌒</a>
+        
+        <div class="message" id="action-message"></div>
         
         <hr>
         
@@ -84,37 +105,86 @@
             <div class="path-card">
                 <h3>مسار تطوير الويب</h3>
                 <p>HTML, CSS, JavaScript, React, Node.js</p>
-                <a href="/web-dev">ابدأ المسار →</a>
+                <a href="#" class="path-link" data-path="web">ابدأ المسار →</a>
             </div>
             <div class="path-card">
                 <h3>مسار بايثون</h3>
                 <p>أساسيات بايثون، تحليل البيانات، الذكاء الاصطناعي</p>
-                <a href="/python">ابدأ المسار →</a>
+                <a href="#" class="path-link" data-path="python">ابدأ المسار →</a>
             </div>
             <div class="path-card">
                 <h3>مسار تطوير التطبيقات</h3>
                 <p>Flutter, React Native, تطبيقات الجوال</p>
-                <a href="/mobile">ابدأ المسار →</a>
+                <a href="#" class="path-link" data-path="mobile">ابدأ المسار →</a>
             </div>
             <div class="path-card">
                 <h3>مسار قواعد البيانات</h3>
                 <p>SQL, MySQL, MongoDB, تصميم قواعد البيانات</p>
-                <a href="/databases">ابدأ المسار →</a>
+                <a href="#" class="path-link" data-path="databases">ابدأ المسار →</a>
             </div>
         </div>
         
         <h2 id="source-code">الكود المصدر</h2>
         <p>يمكنك الاطلاع على المشاريع والأمثلة العملية من خلال:</p>
         <ul>
-            <li><a href="https://github.com/example/programming-arabic" target="_blank">مستودع GitHub</a></li>
-            <li><a href="/projects">المشاريع العملية</a></li>
-            <li><a href="/examples">الأمثلة التفاعلية</a></li>
+            <li><a href="https://github.com/arabic-programming/free-programming" target="_blank" class="external-link">مستودع GitHub للمشروع</a></li>
+            <li><a href="https://github.com/trending?l=arabic" target="_blank" class="external-link">مشاريع عربية مفتوحة المصدر</a></li>
+            <li><a href="https://www.example.com/projects" target="_blank" class="external-link">المشاريع العملية</a></li>
+            <li><a href="https://www.example.com/examples" target="_blank" class="external-link">الأمثلة التفاعلية</a></li>
         </ul>
     </div>
     
     <footer>
         <p>© 2023 مشروع تعلم البرمجة مجاناً. جميع المحتويات متاحة تحت رخصة مفتوحة.</p>
-        <p>تواصل معنا: <a href="mailto:info@example.com">info@example.com</a></p>
+        <p>تواصل معنا: <a href="mailto:info@arabic-programming.com" class="external-link">info@arabic-programming.com</a></p>
     </footer>
+
+    <script>
+        // عرض رسالة عند النقر على الروابط الداخلية (بدلاً من الانتقال لصفحة غير موجودة)
+        document.querySelectorAll('.cta, .path-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const message = document.getElementById('action-message');
+                
+                let text = '';
+                if (this.id === 'start-learning') {
+                    text = '🚀 جارٍ تحضير دروس البداية... سيتم توجيهك إلى صفحة الدروس قريباً!';
+                } else if (this.classList.contains('path-link')) {
+                    const pathName = this.getAttribute('data-path');
+                    const paths = {
+                        'web': 'تطوير الويب',
+                        'python': 'بايثون',
+                        'mobile': 'تطوير التطبيقات',
+                        'databases': 'قواعد البيانات'
+                    };
+                    text = `📚 تم اختيار مسار ${paths[pathName]}. سيتم تحميل الدروس قريباً!`;
+                } else {
+                    text = '🔧 جارٍ التحميل...';
+                }
+                
+                message.textContent = text;
+                message.style.display = 'block';
+                
+                // إخفاء الرسالة بعد 5 ثواني
+                setTimeout(() => {
+                    message.style.display = 'none';
+                }, 5000);
+            });
+        });
+        
+        // الروابط الخارجية تعمل بشكل طبيعي
+        document.querySelectorAll('.external-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // لا نوقف السلوك الطبيعي للروابط الخارجية
+                console.log('فتح رابط خارجي: ', this.href);
+            });
+        });
+        
+        // عند النقر على "شاهد الكود المصدر" ننتقل للقسم المطلوب
+        document.querySelector('a[href="#source-code"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('source-code').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
