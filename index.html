@@ -29,109 +29,87 @@
             <h1><span class="highlight">تعلم البرمجة</span> مجاناً تماماً</h1>
             <p>مشروع عربي مفتوح المصدر يهدف إلى تعليم البرمجة للجميع من الصفر إلى الاحتراف، بدروس واضحة، أمثلة عملية، ومشاريع حقيقية.</p>
             <a href="#courses" class="btn btn-primary">ابدأ التعلم الآن</a>
-            <a href="#contribute" class="btn btn-secondary">ساهم معنا</a>
+            <a href="https://github.com/mohamed594261/learn-programming-free" class="btn btn-secondary" target="_blank">
+                <i class="fab fa-github"></i> شاهد الكود على GitHub
+            </a>
         </div>
     </section>
 
     <!-- قسم الدروس -->
-    <!-- قسم الدروس - جزء من index.html -->
-<section id="courses" class="section courses-section">
-    <div class="container">
-        <h2 class="section-title">📚 مسارات التعلم المتاحة</h2>
-        <p class="section-subtitle">اختر المسار الذي يناسبك وابدأ رحلتك البرمجية اليوم</p>
-        
-        <div class="courses-grid">
-            <!-- HTML & CSS -->
-            <a href="courses/html-css/lesson1.html" class="btn-course">ابدأ الآن</a>
-            <div class="course-card">
-                <div class="course-icon" style="background-color: #e34c26;">
-                    <i class="fab fa-html5"></i>
-                </div>
-                <h3>HTML & CSS</h3>
-                <p>أساسيات بناء وتصميم صفحات الويب. تعلم هيكلة المحتوى وتنسيقه.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-book"></i> 15 درس</span>
-                    <span><i class="fas fa-clock"></i> 10 ساعات</span>
-                </div>
-                <a href="#" class="btn-course">ابدأ الآن</a>
-            </div>
+    <section id="courses" class="section courses-section">
+        <div class="container">
+            <h2 class="section-title">📚 مسارات التعلم المتاحة</h2>
+            <p class="section-subtitle">اختر المسار الذي يناسبك وابدأ رحلتك البرمجية اليوم</p>
             
-            
-        <!-- JavaScript -->
-            <a href="courses/html-css/lesson1.html" class="btn-course">ابدأ الآن</a>
-            <div class="course-card">
-                <div class="course-icon" style="background-color: #f0db4f;">
-                    <i class="fab fa-js-square"></i>
+            <div class="courses-grid">
+                <!-- HTML & CSS -->
+                <div class="course-card">
+                    <div class="course-icon" style="background-color: #e34c26;">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML & CSS</h3>
+                    <p>أساسيات بناء وتصميم صفحات الويب. تعلم هيكلة المحتوى وتنسيقه.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-book"></i> 15 درس</span>
+                        <span><i class="fas fa-clock"></i> 10 ساعات</span>
+                    </div>
+                    <a href="courses/html-css/lesson1.html" class="btn-course">ابدأ الآن</a>
                 </div>
-                <h3>JavaScript</h3>
-                <p>إضافة التفاعل والحركة لمواقعك. أساسيات البرمجة بلغة JS.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-book"></i> 20 درس</span>
-                    <span><i class="fas fa-clock"></i> 15 ساعة</span>
+                
+                <!-- JavaScript -->
+                <div class="course-card">
+                    <div class="course-icon" style="background-color: #f0db4f;">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>إضافة التفاعل والحركة لمواقعك. أساسيات البرمجة بلغة JS.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-book"></i> 20 درس</span>
+                        <span><i class="fas fa-clock"></i> 15 ساعة</span>
+                    </div>
+                    <a href="#" class="btn-course" onclick="alert('قريباً سيتم إضافة دروس JavaScript!')">ابدأ الآن</a>
                 </div>
-                <a href="#" class="btn-course">ابدأ الآن</a>
-            </div>
-            
-            <!-- Python -->
-            <div class="course-card">
-                <div class="course-icon" style="background-color: #306998;">
-                    <i class="fab fa-python"></i>
+                
+                <!-- Python -->
+                <div class="course-card">
+                    <div class="course-icon" style="background-color: #306998;">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>لغة برمجة قوية وسهلة للمبتدئين. تعلم الأتمتة وتحليل البيانات.</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-book"></i> 18 درس</span>
+                        <span><i class="fas fa-clock"></i> 12 ساعة</span>
+                    </div>
+                    <a href="#" class="btn-course" onclick="alert('قريباً سيتم إضافة دروس Python!')">ابدأ الآن</a>
                 </div>
-                <h3>Python</h3>
-                <p>لغة برمجة قوية وسهلة للمبتدئين. تعلم الأتمتة وتحليل البيانات.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-book"></i> 18 درس</span>
-                    <span><i class="fas fa-clock"></i> 12 ساعة</span>
-                </div>
-                <a href="#" class="btn-course">ابدأ الآن</a>
-            </div>
-            
-            <!-- Git & GitHub -->
-            <div class="course-card">
-                <div class="course-icon" style="background-color: #f1502f;">
-                    <i class="fab fa-git-alt"></i>
-                </div>
-                <h3>Git & GitHub</h3>
-                <p>إدارة الإصدارات والتعاون على المشاريع البرمجية مع الفرق.</p>
-                <div class="course-meta">
-                    <span><i class="fas fa-book"></i> 8 دروس</span>
-                    <span><i class="fas fa-clock"></i> 6 ساعات</span>
-                </div>
-                <a href="#" class="btn-course">ابدأ الآن</a>
             </div>
         </div>
-        
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="#" class="btn btn-primary">
-                <i class="fas fa-list"></i> عرض جميع المسارات
-            </a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- قسم الإحصائيات -->
-<section class="stats">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">متعلم نشط</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">60+</span>
-                <span class="stat-label">درس متاح</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">مشروع عملي</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">مجاني تماماً</span>
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">مجاني تماماً</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">دروس</span>
+                    <span class="stat-label">عربية شاملة</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">مفتوح</span>
+                    <span class="stat-label">مصدر</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">للجميع</span>
+                    <span class="stat-label">بغض النظر عن العمر</span>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- قسم عن المشروع -->
     <section id="about" class="section about-section">
@@ -175,17 +153,19 @@
     <!-- الفوتر -->
     <footer class="footer">
         <div class="container">
-            <p>مشروع "تعلم البرمجة مجاناً" © 2023 - مفتوح المصدر تحت رخصة MIT</p>
+            <p>مشروع "تعلم البرمجة مجاناً" © <span id="current-year">2023</span> - مفتوح المصدر تحت رخصة MIT</p>
             <p>صمم بمحبّة من المجتمع البرمجي العربي ❤️</p>
             <div class="social">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="https://github.com/mohamed594261/learn-programming-free" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </footer>
 
     <!-- ملف JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // تحديث السنة تلقائياً
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
