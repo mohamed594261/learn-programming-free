@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدرس 1: مقدمة في HTML - تعلم البرمجة مجاناً</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- شريط التنقل -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="logo">
+                <i class="fas fa-code"></i> تعلم البرمجة
+            </a>
+            <ul class="nav-links">
+                <li><a href="../../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="../../index.html#courses"><i class="fas fa-book"></i> الدروس</a></li>
+                <li><a href="#" class="active"><i class="fas fa-graduation-cap"></i> HTML & CSS</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <!-- محتوى الدرس -->
+    <div class="lesson-container">
+        <div class="container">
+            <!-- مسار التنقل داخل الدرس -->
+            <div class="breadcrumb">
+                <a href="../../index.html">الرئيسية</a> &gt;
+                <a href="../../index.html#courses">الدروس</a> &gt;
+                <a href="index.html">HTML & CSS</a> &gt;
+                <span>الدرس 1: مقدمة في HTML</span>
+            </div>
+
+            <div class="lesson-header">
+                <h1><i class="fab fa-html5"></i> الدرس 1: مقدمة في HTML</h1>
+                <p class="lesson-meta">
+                    <span><i class="fas fa-clock"></i> الوقت: 20 دقيقة</span>
+                    <span><i class="fas fa-star"></i> المستوى: مبتدئ</span>
+                </p>
+            </div>
+
+            <div class="lesson-content">
+                <!-- شرح الدرس -->
+                <div class="lesson-section">
+                    <h2>ما هو HTML؟</h2>
+                    <p>HTML هي لغة ترميز تستخدم لإنشاء وتصميم صفحات ومواقع الويب. اختصار HTML يعني <strong>لغة ترميز النص الفائق</strong> (HyperText Markup Language).</p>
+                    
+                    <div class="info-box">
+                        <i class="fas fa-lightbulb"></i>
+                        <p>HTML ليست لغة برمجة، بل هي لغة ترميز (Markup Language) تستخدم لوصف هيكل صفحة الويب.</p>
+                    </div>
+                </div>
+
+                <!-- مثال عملي -->
+                <div class="lesson-section">
+                    <h2>أول صفحة HTML لك</h2>
+                    <p>لنبدأ بأبسط مثال لصفحة HTML:</p>
+                    
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>مثال 1: هيكل HTML أساسي</span>
+                            <button class="copy-btn" onclick="copyCode('code1')">نسخ الكود</button>
+                        </div>
+                        <pre id="code1"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ar" dir="rtl"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;أول صفحة لي&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;مرحباً بالعالم!&lt;/h1&gt;
+    &lt;p&gt;هذه أول صفحة ويب أقوم بإنشائها.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- شرح العناصر -->
+                <div class="lesson-section">
+                    <h2>العناصر الأساسية في HTML</h2>
+                    
+                    <div class="elements-grid">
+                        <div class="element-card">
+                            <h3>&lt;h1&gt; إلى &lt;h6&gt;</h3>
+                            <p>العناوين من الأهم (h1) إلى الأقل أهمية (h6)</p>
+                        </div>
+                        <div class="element-card">
+                            <h3>&lt;p&gt;</h3>
+                            <p>لإنشاء فقرة نصية</p>
+                        </div>
+                        <div class="element-card">
+                            <h3>&lt;a&gt;</h3>
+                            <p>لإنشاء رابط (رابط تشعبي)</p>
+                        </div>
+                        <div class="element-card">
+                            <h3>&lt;img&gt;</h3>
+                            <p>لإدراج صورة</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تمرين عملي -->
+                <div class="lesson-section exercise">
+                    <h2><i class="fas fa-pen"></i> تمرين عملي</h2>
+                    <p>أنشئ صفحة HTML تحتوي على:</p>
+                    <ul>
+                        <li>عنوان رئيسي باسمك</li>
+                        <li>فقرة تقدم فيها نفسك</li>
+                        <li>رابط لموقعك المفضل</li>
+                    </ul>
+                    
+                    <div class="solution-toggle">
+                        <button onclick="toggleSolution()">عرض الحل</button>
+                    </div>
+                    
+                    <div id="solution" class="solution" style="display: none;">
+                        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="ar"&gt;
+&lt;head&gt;
+    &lt;title&gt;تعريفي&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;أنا [اسمك]&lt;/h1&gt;
+    &lt;p&gt;أنا أتعلم البرمجة وأحب تطوير مواقع الويب.&lt;/p&gt;
+    &lt;a href="https://example.com"&gt;زيارة موقعي المفضل&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                </div>
+
+                <!-- التنقل بين الدروس -->
+                <div class="lesson-navigation">
+                    <a href="#" class="btn-prev disabled">
+                        <i class="fas fa-arrow-right"></i> الدرس السابق
+                    </a>
+                    <a href="lesson2.html" class="btn-next">
+                        الدرس التالي: العناصر والوسوم <i class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الفوتر -->
+    <footer class="footer">
+        <div class="container">
+            <p>مشروع "تعلم البرمجة مجاناً" © <span class="current-year">2023</span></p>
+            <p>الدرس 1 من سلسلة HTML & CSS</p>
+        </div>
+    </footer>
+
+    <script>
+        // دالة نسخ الكود
+        function copyCode(elementId) {
+            const codeElement = document.getElementById(elementId);
+            const text = codeElement.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('تم نسخ الكود بنجاح!');
+            });
+        }
+
+        // دالة عرض/إخفاء الحل
+        function toggleSolution() {
+            const solution = document.getElementById('solution');
+            if (solution.style.display === 'none') {
+                solution.style.display = 'block';
+            } else {
+                solution.style.display = 'none';
+            }
+        }
+
+        // تحديث السنة
+        document.querySelector('.current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
