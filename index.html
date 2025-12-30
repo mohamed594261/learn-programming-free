@@ -1,171 +1,36 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم البرمجة مجاناً - للجميع</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>تعلم البرمجة مجاناً</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f0f0f0;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .test {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-    <!-- شريط التنقل -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <i class="fas fa-code"></i> تعلم البرمجة
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
-                <li><a href="#courses"><i class="fas fa-book"></i> الدروس</a></li>
-                <li><a href="#about"><i class="fas fa-info-circle"></i> عن المشروع</a></li>
-                <li><a href="#contribute"><i class="fas fa-hands-helping"></i> المساهمة</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- قسم البطل (Hero) -->
-    <section id="home" class="hero">
-        <div class="container">
-            <h1><span class="highlight">تعلم البرمجة</span> مجاناً تماماً</h1>
-            <p>مشروع عربي مفتوح المصدر يهدف إلى تعليم البرمجة للجميع من الصفر إلى الاحتراف، بدروس واضحة، أمثلة عملية، ومشاريع حقيقية.</p>
-            <a href="#courses" class="btn btn-primary">ابدأ التعلم الآن</a>
-            <a href="https://github.com/mohamed594261/learn-programming-free" class="btn btn-secondary" target="_blank">
-                <i class="fab fa-github"></i> شاهد الكود على GitHub
-            </a>
-        </div>
-    </section>
-
-    <!-- قسم الدروس -->
-    <section id="courses" class="section courses-section">
-        <div class="container">
-            <h2 class="section-title">📚 مسارات التعلم المتاحة</h2>
-            <p class="section-subtitle">اختر المسار الذي يناسبك وابدأ رحلتك البرمجية اليوم</p>
-            
-            <div class="courses-grid">
-                <!-- HTML & CSS -->
-                <div class="course-card">
-                    <div class="course-icon" style="background-color: #e34c26;">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML & CSS</h3>
-                    <p>أساسيات بناء وتصميم صفحات الويب. تعلم هيكلة المحتوى وتنسيقه.</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-book"></i> 15 درس</span>
-                        <span><i class="fas fa-clock"></i> 10 ساعات</span>
-                    </div>
-                    <a href="courses/html-css/lesson1.html" class="btn-course">ابدأ الآن</a>
-                </div>
-                
-                <!-- JavaScript -->
-                <div class="course-card">
-                    <div class="course-icon" style="background-color: #f0db4f;">
-                        <i class="fab fa-js-square"></i>
-                    </div>
-                    <h3>JavaScript</h3>
-                    <p>إضافة التفاعل والحركة لمواقعك. أساسيات البرمجة بلغة JS.</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-book"></i> 20 درس</span>
-                        <span><i class="fas fa-clock"></i> 15 ساعة</span>
-                    </div>
-                    <a href="#" class="btn-course" onclick="alert('قريباً سيتم إضافة دروس JavaScript!')">ابدأ الآن</a>
-                </div>
-                
-                <!-- Python -->
-                <div class="course-card">
-                    <div class="course-icon" style="background-color: #306998;">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>لغة برمجة قوية وسهلة للمبتدئين. تعلم الأتمتة وتحليل البيانات.</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-book"></i> 18 درس</span>
-                        <span><i class="fas fa-clock"></i> 12 ساعة</span>
-                    </div>
-                    <a href="#" class="btn-course" onclick="alert('قريباً سيتم إضافة دروس Python!')">ابدأ الآن</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم الإحصائيات -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">مجاني تماماً</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">دروس</span>
-                    <span class="stat-label">عربية شاملة</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">مفتوح</span>
-                    <span class="stat-label">مصدر</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">للجميع</span>
-                    <span class="stat-label">بغض النظر عن العمر</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم عن المشروع -->
-    <section id="about" class="section about-section">
-        <div class="container">
-            <h2 class="section-title">🛈 عن المشروع</h2>
-            <div class="about-content">
-                <p>هذا مشروع <strong>مفتوح المصدر</strong> يهدف إلى توفير تعليم برمجي عالي الجودة باللغة العربية مجاناً للجميع.</p>
-                <p>كل الدروس، الأمثلة، والمواد التعليمية متاحة للتعديل والتطوير من قبل المجتمع.</p>
-                <p>نؤمن بأن المعرفة يجب أن تكون حرة ومتاحة للجميع.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المساهمة -->
-    <section id="contribute" class="section contribute-section">
-        <div class="container">
-            <h2 class="section-title">🤝 كيف تساهم؟</h2>
-            <div class="contribute-cards">
-                <div class="card">
-                    <i class="fas fa-edit"></i>
-                    <h3>تحسين الدروس</h3>
-                    <p>ساعد في تحسين الدروس الحالية أو إضافة شروحات جديدة.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-bug"></i>
-                    <h3>الإبلاغ عن أخطاء</h3>
-                    <p>إذا وجدت خطأً تقنياً أو لغوياً، بلّغ عنه في GitHub.</p>
-                </div>
-                <div class="card">
-                    <i class="fas fa-share-alt"></i>
-                    <h3>نشر المعرفة</h3>
-                    <p>شارك الموقع مع أصدقائك وزملائك المهتمين بالبرمجة.</p>
-                </div>
-            </div>
-            <a href="https://github.com/mohamed594261/learn-programming-free" class="btn btn-primary" target="_blank">
-                <i class="fab fa-github"></i> الذهاب إلى مستودع GitHub
-            </a>
-        </div>
-    </section>
-
-    <!-- الفوتر -->
-    <footer class="footer">
-        <div class="container">
-            <p>مشروع "تعلم البرمجة مجاناً" © <span id="current-year">2023</span> - مفتوح المصدر تحت رخصة MIT</p>
-            <p>صمم بمحبّة من المجتمع البرمجي العربي ❤️</p>
-            <div class="social">
-                <a href="https://github.com/mohamed594261/learn-programming-free" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- ملف JavaScript -->
-    <script src="script.js"></script>
-    <script>
-        // تحديث السنة تلقائياً
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    <div class="test">
+        <h1>🎉 موقعي يعمل! 🎉</h1>
+        <p>مرحباً! هذا اختبار لموقع "تعلم البرمجة مجاناً".</p>
+        <p>إذا رأيت هذا النص، فهذا يعني أن الموقع يعمل بشكل صحيح.</p>
+        <p>الخطوة التالية: إضافة التصميم الكامل.</p>
+        <p style="color: green; font-weight: bold;">✓ تم النشر بنجاح على GitHub Pages</p>
+    </div>
 </body>
 </html>
