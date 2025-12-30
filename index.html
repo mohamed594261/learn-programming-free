@@ -1,36 +1,610 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم البرمجة مجاناً</title>
+    <title>تعلم البرمجة مجاناً - للجميع</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background: #f0f0f0;
+        /* ========== إعدادات عامة ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
+        
+        body {
+            font-family: 'Segoe UI', 'Cairo', Tahoma, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            direction: rtl;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ========== شريط التنقل ========== */
+        nav {
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: #f1c40f;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.8rem 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            background: rgba(241, 196, 15, 0.2);
+            color: #f1c40f;
+            transform: translateY(-2px);
+        }
+        
+        /* ========== قسم البطل ========== */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
+            padding: 8rem 0;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+            margin-bottom: 4rem;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .highlight {
+            color: #f1c40f;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #f1c40f;
+            border-radius: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* ========== الأزرار ========== */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin: 0 15px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, #f1c40f, #f39c12);
             color: #2c3e50;
         }
-        .test {
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(243, 156, 18, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 3px solid white;
+        }
+        
+        .btn-secondary:hover {
             background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px auto;
-            max-width: 600px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: #2c3e50;
+            transform: translateY(-5px);
+        }
+        
+        /* ========== قسم الدروس ========== */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* ========== بطاقات الدروس ========== */
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, #3498db, #2ecc71);
+        }
+        
+        .course-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(50, 50, 93, 0.25), 0 15px 35px rgba(0, 0, 0, 0.15);
+            border-color: #3498db;
+        }
+        
+        .course-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .html-icon { background: linear-gradient(45deg, #e34c26, #f06529); }
+        .js-icon { background: linear-gradient(45deg, #f0db4f, #f7df1e); color: #333 !important; }
+        .python-icon { background: linear-gradient(45deg, #306998, #4b8bbe); }
+        
+        .course-card h3 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+        
+        .course-card p {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .btn-course {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-course:hover {
+            background: transparent;
+            color: #3498db;
+            border-color: #3498db;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        /* ========== قسم الإحصائيات ========== */
+        .stats {
+            background: linear-gradient(135deg, #2c3e50, #1a252f);
+            color: white;
+            padding: 6rem 0;
+            margin: 6rem 0;
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #f1c40f;
+            display: block;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .stat-label {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+        
+        /* ========== الفوتر ========== */
+        footer {
+            background: #1a252f;
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+        
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .social a {
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social a:hover {
+            background: #3498db;
+            color: white;
+            transform: translateY(-5px) rotate(10deg);
+        }
+        
+        /* ========== التجاوبية ========== */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                width: 100%;
+            }
+            
+            .nav-links a {
+                display: block;
+                width: 100%;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 20px auto;
+                width: 90%;
+                max-width: 300px;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+        
+        /* ========== تأثيرات الحركة ========== */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .course-icon {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        /* ========== تلميحات ========== */
+        .tooltip {
+            position: relative;
+            cursor: help;
+        }
+        
+        .tooltip:hover::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #2c3e50;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            z-index: 100;
         }
     </style>
+    <!-- ربط Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="test">
-        <h1>🎉 موقعي يعمل! 🎉</h1>
-        <p>مرحباً! هذا اختبار لموقع "تعلم البرمجة مجاناً".</p>
-        <p>إذا رأيت هذا النص، فهذا يعني أن الموقع يعمل بشكل صحيح.</p>
-        <p>الخطوة التالية: إضافة التصميم الكامل.</p>
-        <p style="color: green; font-weight: bold;">✓ تم النشر بنجاح على GitHub Pages</p>
-    </div>
+    <!-- شريط التنقل -->
+    <nav>
+        <div class="container navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i> تعلم البرمجة مجاناً
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#courses"><i class="fas fa-book"></i> الدروس</a></li>
+                <li><a href="#stats"><i class="fas fa-chart-line"></i> الإحصائيات</a></li>
+                <li><a href="https://github.com/mohamed594261/learn-programming-free" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- قسم البطل -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1><span class="highlight">تعلم البرمجة</span> مجاناً تماماً</h1>
+            <p class="tooltip" data-tooltip="مشروع عربي مجاني للجميع">مشروع عربي مفتوح المصدر يهدف إلى تعليم البرمجة للجميع من الصفر إلى الاحتراف، بدروس واضحة، أمثلة عملية، ومشاريع حقيقية.</p>
+            <div class="hero-buttons">
+                <a href="#courses" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> ابدأ التعلم الآن
+                </a>
+                <a href="https://github.com/mohamed594261/learn-programming-free" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-github"></i> شاهد الكود المصدري
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الدروس -->
+    <section id="courses" class="section">
+        <div class="container">
+            <h2 class="section-title">🚀 مسارات التعلم المتاحة</h2>
+            <p class="section-subtitle">اختر المسار الذي يناسبك وابدأ رحلتك البرمجية اليوم</p>
+            
+            <div class="courses-grid">
+                <!-- HTML & CSS -->
+                <div class="course-card">
+                    <div class="course-icon html-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML & CSS</h3>
+                    <p>تعلم بناء وتصميم مواقع الويب من الصفر. أساسيات الهيكلة والتنسيق للويب.</p>
+                    <a href="courses/html-css/lesson1.html" class="btn-course">
+                        <i class="fas fa-play-circle"></i> ابدأ الآن
+                    </a>
+                </div>
+                
+                <!-- JavaScript -->
+                <div class="course-card">
+                    <div class="course-icon js-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p>إضافة التفاعل والديناميكية لمواقعك. تعلم البرمجة بلغة ويب قوية.</p>
+                    <a href="#" class="btn-course" onclick="alert('دروس JavaScript قريباً!')">
+                        <i class="fas fa-clock"></i> قريباً
+                    </a>
+                </div>
+                
+                <!-- Python -->
+                <div class="course-card">
+                    <div class="course-icon python-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p>لغة برمجة قوية وسهلة للمبتدئين. تعلم الأتمتة وتحليل البيانات.</p>
+                    <a href="#" class="btn-course" onclick="alert('دروس Python قريباً!')">
+                        <i class="fas fa-clock"></i> قريباً
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم الإحصائيات -->
+    <section id="stats" class="stats">
+        <div class="container">
+            <h2 style="color: white; text-align: center; font-size: 2.8rem; margin-bottom: 3rem;">📊 لماذا نتعلم معاً؟</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">مجاني تماماً</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">⚡</span>
+                    <span class="stat-label">تعلم سريع</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">🌐</span>
+                    <span class="stat-label">عربي بالكامل</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">🤝</span>
+                    <span class="stat-label">مجتمع داعم</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <div class="container">
+            <div class="social">
+                <a href="https://github.com/mohamed594261/learn-programming-free" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" title="التويتر (قريباً)" onclick="alert('قريباً!')">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" title="اليوتيوب (قريباً)" onclick="alert('قريباً!')">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" title="مجتمع الديسكورد (قريباً)" onclick="alert('قريباً!')">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            
+            <p>مشروع "تعلم البرمجة مجاناً" © <span id="current-year">2023</span></p>
+            <p>مفتوح المصدر تحت رخصة MIT | شارك المعرفة مع الجميع ❤️</p>
+            <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 2rem;">
+                صنع بكل ❤️ للمجتمع العربي البرمجي
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // تحديث السنة تلقائياً
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // تأثير سلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // رسالة ترحيب
+        console.log('🎉 مرحباً في موقع "تعلم البرمجة مجاناً"!');
+        console.log('🚀 الموقع منشور بنجاح على: https://mohamed594261.github.io/learn-programming-free/');
+    </script>
 </body>
 </html>
