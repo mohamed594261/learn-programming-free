@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تعلم البرمجة مجاناً - للجميع</title>
-    <!-- Font Awesome للأيقونات -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== إعدادات أساسية ===== */
+        /* إعدادات أساسية */
         * {
             margin: 0;
             padding: 0;
@@ -15,472 +13,164 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: #f8f9fa;
-            direction: rtl;
+            background: #f5f5f5;
+            text-align: center;
         }
         
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
         }
         
-        /* ===== شريط التنقل ===== */
+        /* شريط التنقل */
         header {
             background: #2c3e50;
             color: white;
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px 0;
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 24px;
             font-weight: bold;
             color: white;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
-        .logo i {
-            color: #f1c40f;
-            font-size: 2rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s;
-            font-weight: 500;
-        }
-        
-        .nav-links a:hover {
-            background: rgba(255,255,255,0.1);
-            color: #f1c40f;
-        }
-        
-        /* ===== قسم البطل ===== */
+        /* قسم البطل */
         .hero {
-            background: linear-gradient(135deg, #2c3e50, #3498db);
+            background: linear-gradient(to right, #2c3e50, #3498db);
             color: white;
-            text-align: center;
-            padding: 6rem 0;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            margin-bottom: 4rem;
+            padding: 80px 0;
+            margin: 20px 0;
+            border-radius: 10px;
         }
         
         .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-        }
-        
-        .highlight {
-            color: #f1c40f;
-            position: relative;
+            font-size: 36px;
+            margin-bottom: 20px;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 18px;
             max-width: 800px;
-            margin: 0 auto 3rem;
-            opacity: 0.9;
-            line-height: 1.8;
+            margin: 0 auto 30px;
         }
         
-        /* ===== الأزرار ===== */
+        /* الأزرار */
         .btn {
             display: inline-block;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            margin: 0 10px;
-        }
-        
-        .btn-primary {
+            padding: 12px 30px;
             background: #f1c40f;
             color: #2c3e50;
-            box-shadow: 0 5px 15px rgba(241, 196, 15, 0.3);
-        }
-        
-        .btn-primary:hover {
-            background: #f39c12;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #2c3e50;
-            transform: translateY(-3px);
-        }
-        
-        /* ===== قسم الدروس ===== */
-        .courses-section {
-            padding: 5rem 0;
-            background: white;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
-        }
-        
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .course-card {
-            background: #fff;
-            border-radius: 15px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            text-align: center;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
-        
-        .course-card:hover {
-            transform: translateY(-10px);
-            border-color: #3498db;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .course-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 2rem;
-        }
-        
-        .html-icon { background: linear-gradient(45deg, #e34c26, #f06529); }
-        .js-icon { background: linear-gradient(45deg, #f0db4f, #f7df1e); color: #333; }
-        .python-icon { background: linear-gradient(45deg, #306998, #4b8bbe); }
-        
-        .course-card h3 {
-            color: #2c3e50;
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-        }
-        
-        .course-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .btn-course {
-            display: inline-block;
-            background: #3498db;
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
             text-decoration: none;
+            border-radius: 5px;
             font-weight: bold;
+            margin: 10px;
             transition: all 0.3s;
         }
         
-        .btn-course:hover {
-            background: #2980b9;
+        .btn:hover {
+            background: #f39c12;
             transform: scale(1.05);
         }
         
-        /* ===== قسم الإحصائيات ===== */
-        .stats {
-            background: linear-gradient(135deg, #2c3e50, #1a252f);
-            color: white;
-            padding: 5rem 0;
-            margin: 4rem 0;
-            text-align: center;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .stat-item {
-            padding: 2rem;
-        }
-        
-        .stat-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #f1c40f;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
-        /* ===== الفوتر ===== */
-        footer {
-            background: #1a252f;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-        
-        footer p {
-            margin-bottom: 1rem;
-            opacity: 0.8;
-        }
-        
-        .social {
+        /* قسم الدروس */
+        .courses {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin: 2rem 0;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
         }
         
-        .social a {
+        .course {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .course h3 {
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+        
+        /* الفوتر */
+        footer {
+            background: #2c3e50;
             color: white;
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social a:hover {
-            color: #3498db;
-        }
-        
-        /* ===== التجاوبية ===== */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1.5rem;
-            }
-            
-            .nav-links {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                padding: 0 15px;
-            }
-            
-            .btn {
-                display: block;
-                margin: 15px auto;
-                width: 80%;
-                max-width: 300px;
-            }
-            
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
+            padding: 30px 0;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
     <!-- شريط التنقل -->
     <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-code"></i>
-                تعلم البرمجة مجاناً
-            </a>
-            <ul class="nav-links">
-                <li><a href="#"><i class="fas fa-home"></i> الرئيسية</a></li>
-                <li><a href="#courses"><i class="fas fa-book"></i> الدروس</a></li>
-                <li><a href="#"><i class="fas fa-info-circle"></i> عنا</a></li>
-                <li><a href="https://github.com/mohamed594261/learn-programming-free" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a></li>
-            </ul>
+        <div class="container">
+            <a href="#" class="logo">💻 تعلم البرمجة مجاناً</a>
         </div>
     </header>
 
     <!-- قسم البطل -->
     <section class="hero">
         <div class="container">
-            <h1><span class="highlight">تعلم البرمجة</span> مجاناً تماماً</h1>
+            <h1>تعلم البرمجة مجاناً تماماً</h1>
             <p>مشروع عربي مفتوح المصدر يهدف إلى تعليم البرمجة للجميع من الصفر إلى الاحتراف، بدروس واضحة، أمثلة عملية، ومشاريع حقيقية.</p>
-            <div>
-                <a href="#courses" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i> ابدأ التعلم الآن
-                </a>
-                <a href="https://github.com/mohamed594261/learn-programming-free" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-github"></i> شاهد الكود المصدري
-                </a>
-            </div>
+            <a href="#courses" class="btn">🚀 ابدأ التعلم الآن</a>
+            <a href="https://github.com/mohamed594261/learn-programming-free" class="btn" target="_blank">📦 شاهد الكود المصدري</a>
         </div>
     </section>
 
     <!-- قسم الدروس -->
-    <section id="courses" class="courses-section">
-        <div class="container">
-            <h2 class="section-title">🚀 مسارات التعلم</h2>
-            <p class="section-subtitle">اختر المسار الذي يناسبك وابدأ رحلتك البرمجية</p>
+    <div class="container">
+        <h2 style="margin: 40px 0; color: #2c3e50;">📚 مسارات التعلم</h2>
+        
+        <div class="courses">
+            <!-- HTML & CSS -->
+            <div class="course">
+                <div style="background: #e34c26; color: white; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto; font-size: 24px;">
+                    🌐
+                </div>
+                <h3>HTML & CSS</h3>
+                <p>تعلم بناء وتصميم مواقع الويب</p>
+                <a href="courses/html-css/lesson1.html" style="display: inline-block; background: #3498db; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px;">ابدأ الآن</a>
+            </div>
             
-            <div class="courses-grid">
-                <!-- HTML & CSS -->
-                <div class="course-card">
-                    <div class="course-icon html-icon">
-                        <i class="fab fa-html5"></i>
-                    </div>
-                    <h3>HTML & CSS</h3>
-                    <p>تعلم بناء وتصميم مواقع الويب من الصفر. أساسيات الهيكلة والتنسيق.</p>
-                    <a href="courses/html-css/lesson1.html" class="btn-course">
-                        <i class="fas fa-play"></i> ابدأ الآن
-                    </a>
+            <!-- JavaScript -->
+            <div class="course">
+                <div style="background: #f0db4f; color: #333; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto; font-size: 24px;">
+                    ⚡
                 </div>
-                
-                <!-- JavaScript -->
-                <div class="course-card">
-                    <div class="course-icon js-icon">
-                        <i class="fab fa-js-square"></i>
-                    </div>
-                    <h3>JavaScript</h3>
-                    <p>إضافة التفاعل والديناميكية لمواقعك. برمجة الويب الحديثة.</p>
-                    <a href="#" class="btn-course" onclick="alert('دروس JavaScript قريباً!')">
-                        <i class="fas fa-clock"></i> قريباً
-                    </a>
+                <h3>JavaScript</h3>
+                <p>إضافة التفاعل لمواقعك</p>
+                <a href="#" style="display: inline-block; background: #95a5a6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px;">قريباً</a>
+            </div>
+            
+            <!-- Python -->
+            <div class="course">
+                <div style="background: #306998; color: white; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto; font-size: 24px;">
+                    🐍
                 </div>
-                
-                <!-- Python -->
-                <div class="course-card">
-                    <div class="course-icon python-icon">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h3>Python</h3>
-                    <p>لغة برمجة قوية وسهلة للمبتدئين. تعلم الأتمتة وتحليل البيانات.</p>
-                    <a href="#" class="btn-course" onclick="alert('دروس Python قريباً!')">
-                        <i class="fas fa-clock"></i> قريباً
-                    </a>
-                </div>
+                <h3>Python</h3>
+                <p>لغة برمجة قوية وسهلة</p>
+                <a href="#" style="display: inline-block; background: #95a5a6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px;">قريباً</a>
             </div>
         </div>
-    </section>
-
-    <!-- قسم الإحصائيات -->
-    <section class="stats">
-        <div class="container">
-            <h2 style="color: white; text-align: center; margin-bottom: 2rem; font-size: 2.5rem;">✨ لماذا تتعلم معنا؟</h2>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">مجاني تماماً</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">📚</span>
-                    <span class="stat-label">دروس عربية</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">⚡</span>
-                    <span class="stat-label">تعلم سريع</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">🤝</span>
-                    <span class="stat-label">مجتمع داعم</span>
-                </div>
-            </div>
-        </div>
-    </section>
+    </div>
 
     <!-- الفوتر -->
     <footer>
         <div class="container">
-            <div class="social">
-                <a href="https://github.com/mohamed594261/learn-programming-free" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-discord"></i>
-                </a>
-            </div>
-            
-            <p>مشروع "تعلم البرمجة مجاناً" © <span id="year">2023</span></p>
-            <p>مفتوح المصدر | شارك المعرفة مع الجميع</p>
-            <p style="margin-top: 2rem; opacity: 0.6; font-size: 0.9rem;">
-                صنع بكل ❤️ للمجتمع العربي البرمجي
-            </p>
+            <p>مشروع "تعلم البرمجة مجاناً" © <script>document.write(new Date().getFullYear())</script></p>
+            <p>مفتوح المصدر | شارك المعرفة</p>
         </div>
     </footer>
-
-    <script>
-        // تحديث السنة تلقائياً
-        document.getElementById('year').textContent = new Date().getFullYear();
-        
-        // تأثيرات بسيطة
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-3px)';
-            });
-            btn.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-        
-        // رسالة ترحيب في الكونسول
-        console.log('🎉 مرحباً في موقع تعلم البرمجة مجاناً!');
-        console.log('✅ الموقع منشور بنجاح على GitHub Pages');
-        console.log('🚀 ابدأ رحلتك البرمجية اليوم!');
-    </script>
 </body>
 </html>
