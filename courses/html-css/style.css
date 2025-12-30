@@ -1,0 +1,235 @@
+/* تنسيقات خاصة بصفحات الدروس */
+
+.lesson-container {
+    padding: 2rem 0;
+    background: #f8f9fa;
+    min-height: 80vh;
+}
+
+/* مسار التنقل */
+.breadcrumb {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.breadcrumb a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+.breadcrumb span {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* عنوان الدرس */
+.lesson-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.lesson-header h1 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.lesson-meta {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    color: #666;
+}
+
+/* محتوى الدرس */
+.lesson-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.lesson-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.lesson-section h2 {
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+    padding-right: 1rem;
+    border-right: 4px solid var(--secondary);
+}
+
+/* صندوق المعلومات */
+.info-box {
+    background: #e3f2fd;
+    border-right: 4px solid var(--secondary);
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.info-box i {
+    color: var(--secondary);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+/* أمثلة الكود */
+.code-example {
+    background: #2d3748;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1.5rem 0;
+}
+
+.code-header {
+    background: #1a202c;
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.copy-btn {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.copy-btn:hover {
+    background: #2980b9;
+}
+
+pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+code {
+    color: #cbd5e0;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+}
+
+/* شبكة العناصر */
+.elements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.element-card {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s;
+}
+
+.element-card:hover {
+    border-color: var(--secondary);
+    transform: translateY(-5px);
+}
+
+.element-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+/* التمرين */
+.exercise {
+    background: #fff8e1;
+    padding: 2rem;
+    border-radius: 10px;
+    border-right: 5px solid #ffb300;
+}
+
+.exercise h2 {
+    color: #ff8f00;
+}
+
+.exercise ul {
+    padding-right: 1.5rem;
+}
+
+.exercise li {
+    margin-bottom: 0.5rem;
+}
+
+.solution-toggle {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.solution-toggle button {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.solution {
+    background: #e8f5e9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* تنقل بين الدروس */
+.lesson-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid #eee;
+}
+
+.btn-prev, .btn-next {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.btn-next {
+    background: var(--secondary);
+}
+
+.btn-prev:hover, .btn-next:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.disabled {
+    background: #ccc !important;
+    cursor: not-allowed;
+}
