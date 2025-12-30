@@ -1,176 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تعلم البرمجة مجاناً - للجميع</title>
+    <title>اختبار الموقع</title>
     <style>
-        /* إعدادات أساسية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
+            background: #2c3e50;
+            color: white;
+            font-family: Arial;
             text-align: center;
+            padding: 50px;
         }
-        
-        .container {
-            width: 90%;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* شريط التنقل */
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-        }
-        
-        /* قسم البطل */
-        .hero {
-            background: linear-gradient(to right, #2c3e50, #3498db);
-            color: white;
-            padding: 80px 0;
-            margin: 20px 0;
-            border-radius: 10px;
-        }
-        
-        .hero h1 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-        
-        .hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px;
-        }
-        
-        /* الأزرار */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: #f1c40f;
-            color: #2c3e50;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            margin: 10px;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background: #f39c12;
-            transform: scale(1.05);
-        }
-        
-        /* قسم الدروس */
-        .courses {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin: 40px 0;
-        }
-        
-        .course {
+        .test {
             background: white;
-            padding: 25px;
+            color: #333;
+            padding: 30px;
             border-radius: 10px;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .course h3 {
-            color: #2c3e50;
-            margin: 15px 0;
-        }
-        
-        /* الفوتر */
-        footer {
-            background: #2c3e50;
-            color: white;
-            padding: 30px 0;
-            margin-top: 40px;
+            max-width: 600px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <!-- شريط التنقل -->
-    <header>
-        <div class="container">
-            <a href="#" class="logo">💻 تعلم البرمجة مجاناً</a>
-        </div>
-    </header>
-
-    <!-- قسم البطل -->
-    <section class="hero">
-        <div class="container">
-            <h1>تعلم البرمجة مجاناً تماماً</h1>
-            <p>مشروع عربي مفتوح المصدر يهدف إلى تعليم البرمجة للجميع من الصفر إلى الاحتراف، بدروس واضحة، أمثلة عملية، ومشاريع حقيقية.</p>
-            <a href="#courses" class="btn">🚀 ابدأ التعلم الآن</a>
-            <a href="https://github.com/mohamed594261/learn-programming-free" class="btn" target="_blank">📦 شاهد الكود المصدري</a>
-        </div>
-    </section>
-
-    <!-- قسم الدروس -->
-    <div class="container">
-        <h2 id="courses" style="margin: 40px 0; color: #2c3e50;">📚 مسارات التعلم</h2>
-        
-        <div class="courses">
-            <!-- HTML & CSS -->
-            <div class="course">
-                <div style="background: #e34c26; color: white; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto; font-size: 24px;">
-                    🌐
-                </div>
-                <h3>HTML & CSS</h3>
-                <p>تعلم بناء وتصميم مواقع الويب</p>
-                <a href="courses/html-css/lesson1.html" style="display: inline-block; background: #3498db; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px;">ابدأ الآن</a>
-            </div>
-            
-            <!-- JavaScript -->
-            <div class="course">
-                <div style="background: #f0db4f; color: #333; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto; font-size: 24px;">
-                    ⚡
-                </div>
-                <h3>JavaScript</h3>
-                <p>إضافة التفاعل لمواقعك</p>
-                <a href="#" style="display: inline-block; background: #95a5a6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px;">قريباً</a>
-            </div>
-            
-            <!-- Python -->
-            <div class="course">
-                <div style="background: #306998; color: white; width: 60px; height: 60px; line-height: 60px; border-radius: 50%; margin: 0 auto; font-size: 24px;">
-                    🐍
-                </div>
-                <h3>Python</h3>
-                <p>لغة برمجة قوية وسهلة</p>
-                <a href="#" style="display: inline-block; background: #95a5a6; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px;">قريباً</a>
-            </div>
-        </div>
+    <div class="test">
+        <h1>🎉 الاختبار ناجح!</h1>
+        <p>موقع "تعلم البرمجة مجاناً" يعمل الآن.</p>
+        <p>هذه صفحة اختبار بسيطة.</p>
+        <a href="#" style="
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+        ">زر تجريبي</a>
     </div>
-
-    <!-- الفوتر -->
-    <footer>
-        <div class="container">
-            <p>مشروع "تعلم البرمجة مجاناً" © <script>document.write(new Date().getFullYear())</script></p>
-            <p>مفتوح المصدر | شارك المعرفة</p>
-        </div>
-    </footer>
 </body>
 </html>
