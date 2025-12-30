@@ -1,4 +1,4 @@
-/* إعدادات عامة */
+/* ========== إعدادات عامة ========== */
 * {
     margin: 0;
     padding: 0;
@@ -11,15 +11,17 @@
     --accent: #e74c3c;
     --light: #ecf0f1;
     --dark: #2c3e50;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --success: #2ecc71;
+    --warning: #f1c40f;
 }
 
 body {
-    font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', 'Cairo', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.8;
     color: #333;
     background-color: #f9f9f9;
     direction: rtl;
+    text-align: right;
 }
 
 .container {
@@ -29,7 +31,7 @@ body {
     padding: 0 20px;
 }
 
-/* شريط التنقل */
+/* ========== شريط التنقل ========== */
 .navbar {
     background-color: var(--primary);
     color: white;
@@ -37,7 +39,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
@@ -67,31 +69,34 @@ body {
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 .nav-links a:hover {
-    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.1);
+    color: #f1c40f;
 }
 
-/* قسم البطل */
+/* ========== قسم البطل ========== */
 .hero {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     padding: 6rem 0;
     text-align: center;
+    margin-bottom: 3rem;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
+    font-weight: 800;
 }
 
 .highlight {
     color: #f1c40f;
     border-bottom: 3px solid #f1c40f;
+    padding-bottom: 5px;
 }
 
 .hero p {
@@ -99,9 +104,10 @@ body {
     max-width: 800px;
     margin: 0 auto 2.5rem;
     opacity: 0.9;
+    line-height: 1.6;
 }
 
-/* الأزرار */
+/* ========== الأزرار ========== */
 .btn {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -123,6 +129,7 @@ body {
 .btn-primary:hover {
     background-color: #f39c12;
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(243, 156, 18, 0.3);
 }
 
 .btn-secondary {
@@ -134,9 +141,10 @@ body {
 .btn-secondary:hover {
     background-color: white;
     color: var(--dark);
+    transform: translateY(-3px);
 }
 
-/* الأقسام العامة */
+/* ========== الأقسام العامة ========== */
 .section {
     padding: 5rem 0;
 }
@@ -146,6 +154,7 @@ body {
     text-align: center;
     margin-bottom: 1rem;
     color: var(--primary);
+    font-weight: 700;
 }
 
 .section-subtitle {
@@ -158,108 +167,13 @@ body {
     margin-right: auto;
 }
 
-/* قسم الدروس */
+/* ========== قسم الدروس ========== */
 .courses-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
-
-/* البطاقات */
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: var(--shadow);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card i {
-    font-size: 3rem;
-    color: var(--secondary);
-    margin-bottom: 1.5rem;
-}
-
-.card h3 {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
-}
-
-/* قسم المساهمة */
-.contribute-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-}
-
-/* الفوتر */
-.footer {
-    background-color: var(--dark);
-    color: white;
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.footer p {
-    margin-bottom: 1rem;
-    opacity: 0.9;
-}
-
-.social {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.social a {
-    color: white;
-    font-size: 1.8rem;
-    transition: color 0.3s;
-}
-
-.social a:hover {
-    color: var(--secondary);
-}
-
-/* التجاوبية */
-@media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .btn {
-        display: block;
-        margin: 15px auto;
-        width: 80%;
-    }
-}
-
-/* ======== تنسيقات بطاقات الدروس ======== */
 
 .course-card {
     background: white;
@@ -287,6 +201,7 @@ body {
     margin: 0 auto 1.5rem;
     color: white;
     font-size: 2.5rem;
+    font-weight: bold;
 }
 
 .course-card h3 {
@@ -301,21 +216,6 @@ body {
     line-height: 1.6;
 }
 
-.course-meta {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-    color: #777;
-    font-size: 0.9rem;
-}
-
-.course-meta span {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
 .btn-course {
     display: inline-block;
     background: var(--secondary);
@@ -326,6 +226,7 @@ body {
     font-weight: bold;
     transition: all 0.3s;
     border: 2px solid var(--secondary);
+    margin-top: 1rem;
 }
 
 .btn-course:hover {
@@ -333,14 +234,7 @@ body {
     color: var(--secondary);
 }
 
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-/* ======== قسم الإحصائيات ======== */
+/* ========== قسم الإحصائيات ========== */
 .stats {
     background: linear-gradient(135deg, var(--primary), #1a252f);
     color: white;
@@ -372,27 +266,76 @@ body {
     opacity: 0.9;
 }
 
-/* زر العودة للأعلى */
-.scroll-to-top {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--secondary);
+/* ========== الفوتر ========== */
+.footer {
+    background-color: var(--dark);
     color: white;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 4rem;
 }
 
-.scroll-to-top:hover {
-    background: #2980b9;
-    transform: scale(1.1);
+.footer p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.social a {
+    color: white;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: var(--secondary);
+}
+
+/* ========== التجاوبية ========== */
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+    
+    .btn {
+        display: block;
+        margin: 15px auto;
+        width: 80%;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ========== تأثيرات إضافية ========== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .section {
+    animation: fadeIn 1s ease-out;
 }
