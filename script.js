@@ -1,46 +1,66 @@
 // script.js - الملف الرئيسي للتفاعل
 
+// عندما يتم تحميل الصفحة بالكامل
 document.addEventListener('DOMContentLoaded', function() {
     console.log('موقع "تعلم البرمجة مجاناً" جاهز! 🚀');
     
-    // إضافة تأثير للنقر على الروابط في شريط التنقل
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            navLinks.forEach(l => l.classList.remove('active'));
-            this.classList.add('active');
+    // تأثير شريط التنقل عند التمرير
+    window.addEventListener('scroll', function() {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 100) {
+            navbar.style.background = 'rgba(44, 62, 80, 0.95)';
+        } else {
+            navbar.style.background = 'var(--primary)';
+        }
+    });
+    
+    // إنشاء زر العودة للأعلى
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollToTopBtn.className = 'scroll-to-top';
+    document.body.appendChild(scrollToTopBtn);
+    
+    // عند النقر على زر العودة للأعلى
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
     });
     
-    // بيانات الدروس (مؤقتة - ستأتي من ملف JSON لاحقاً)
-    const courses = [
-        { title: 'HTML & CSS', description: 'بناء وتصميم مواقع الويب', icon: 'fas fa-code', color: '#e74c3c' },
-        { title: 'JavaScript', description: 'برمجة الويب التفاعلية', icon: 'fab fa-js-square', color: '#f1c40f' },
-        { title: 'Python', description: 'برمجة عامة وتحليل بيانات', icon: 'fab fa-python', color: '#3498db' },
-        { title: 'Git & GitHub', description: 'إدارة المشاريع والعمل الجماعي', icon: 'fab fa-git-alt', color: '#9b59b6' },
-        { title: 'قواعد البيانات', description: 'SQL والتعامل مع البيانات', icon: 'fas fa-database', color: '#2ecc71' },
-        { title: 'مشاريع عملية', description: 'تطبيقات حقيقية من الصفر', icon: 'fas fa-laptop-code', color: '#e67e22' }
-    ];
-    
-    // عرض الدروس في القسم الخاص بها
-    const coursesGrid = document.querySelector('.courses-grid');
-    if (coursesGrid) {
-        courses.forEach(course => {
-            const courseCard = document.createElement('div');
-            courseCard.className = 'card';
-            courseCard.innerHTML = `
-                <i class="${course.icon}" style="color: ${course.color}; font-size: 3rem;"></i>
-                <h3>${course.title}</h3>
-                <p>${course.description}</p>
-                <button class="btn btn-primary" style="margin-top: 1rem;">ابدأ الدرس</button>
-            `;
-            coursesGrid.appendChild(courseCard);
-        });
-    }
-    
-    // إضافة سنة التحديث التلقائي في الفوتر
-    const yearSpan = document.querySelector('#current-year');
-    if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-    }
+    // إظهار/إخفاء زر العودة للأعلى
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 500) {
+            scrollToTopBtn.style.opacity = '1';
+            scrollToTopBtn.style.visibility = 'visible';
+        } else {
+            scrollToTopBtn.style.opacity = '0';
+            scrollToTopBtn.style.visibility = 'hidden';
+        }
+    });
 });
+
+// نضيف هذا الكود في نهاية ملف style.css
+/*
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    background: #2980b9;
+}
+*/
